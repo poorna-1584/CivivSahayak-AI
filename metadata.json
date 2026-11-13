@@ -1,0 +1,6 @@
+{
+  "name": "CivicSahayak AI",
+  "description": "An intelligent multilingual government schemes assistant helping Andhra Pradesh citizens understand schemes, eligibility, documents, and notifications in Telugu and English.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

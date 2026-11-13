@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Plus Jakarta Sans", "Noto Sans Telugu", system-ui, -apple-system, sans-serif;
+    --font-sans: "DM Sans", "Noto Sans Telugu", system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #f6f8f7;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.civic-hero-surface {
+  background: linear-gradient(135deg, #eef8f5 0%, #ffffff 52%, #fffbeb 100%);
+}
+
+@keyframes civic-wave {
+  0%, 100% {
+    transform: scaleY(0.32);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes civic-signal-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(220%);
+    opacity: 0.15;
+  }
+}
+
+.animate-civic-wave {
+  transform-origin: bottom center;
+  animation: civic-wave 0.9s ease-in-out infinite;
+}
+
+.animate-civic-signal {
+  animation: civic-signal-sweep 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-civic-wave,
+  .animate-civic-signal {
+    animation: none !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+}
